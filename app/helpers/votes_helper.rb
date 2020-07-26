@@ -1,0 +1,2 @@
+module ContentssHelper
+end
