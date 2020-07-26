@@ -1,8 +1,13 @@
 .content
-  .content-new
+  .content__new
     = form_with model: @detail, url: '#', local: true do |f|
-      %h3
-        投稿する
-        = f.text_field :title, placeholder: "迷っていることをかいてね！"
-        = f.text_field :text, placeholder: "案①"
-        = f.text_field :text, placeholder: "案②"
+      %h1
+        みんなに聞いてみよう！
+      .content__new__title
+        何について迷っているの？
+        = f.text_field :title, class: 'form', placeholder: "迷っていることをかいてね！"
+      .content__new__choice
+        みんなに投票してもらう2択を決めてね！
+        = f.text_field :text, class: 'form', placeholder: "①"
+        = f.text_field :text, class: 'form', placeholder: "②"
+        = f.submit "さっそく聞いてみる！", class: 'submit'
