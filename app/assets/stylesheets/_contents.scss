@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-// index.html.haml
   .header {
     background-color:#57C3E9;
     display: flex;
@@ -45,9 +44,6 @@
             border: 1px solid #D8D8D8;
             border-radius: 20px;
             font-family: "游ゴシック", "YuGothic";
-          &__number {
-            
-          }
           }
         }
         &__info {
@@ -59,7 +55,7 @@
     }
   }
 
-// new.html.haml
+
 .content {
   width: 100%;
   margin-left: auto;
@@ -84,6 +80,15 @@
   border-radius: 20px;
   font-family: "游ゴシック", "YuGothic";
       }
+
+.field{
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
 
 .submit {
   background-color: #57C3E9;
