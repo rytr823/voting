@@ -1,0 +1,8 @@
+.content
+  .content-new
+    = form_with model: @detail, url: '#', local: true do |f|
+      %h3
+        投稿する
+        = f.text_field :title, placeholder: "迷っていることをかいてね！"
+        = f.text_field :text, placeholder: "案①"
+        = f.text_field :text, placeholder: "案②"
