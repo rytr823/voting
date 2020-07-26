@@ -1,7 +1,7 @@
 .content
   .content__new
     %h2
-      Log ip
+      Log in
     = form_with model: @user, url: '#', local: true do |f|
       .field
         = f.label :email
@@ -13,5 +13,5 @@
         = f.label :password_confirmation
         = f.password_field, :password_confirmation, autocomplete: "off"  
       .submit
-        = f.submit "Log up"
+        = f.submit "Log in"
         

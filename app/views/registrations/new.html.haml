@@ -1,20 +1,20 @@
 .content
   .content__new
-    %h2
-      Sign up
     = form_with model: @user, url: '#', local: true do |f|
-      .field
-        = f.label :nickname
-        = f.text_field :name, autofocus: true
-      .field
-        = f.label :email
-        = f.email_field :email
-      .field
-        = f.label :password
-        = f.password_field :password, autocomplete: "off"
-      .field
-        = f.label :password_confirmation
-        = f.password_field, :password_confirmation, autocomplete: "off"  
-      .submit
-        = f.submit "Sign up"
-        
+      %h2
+        Sign up
+      .content__new__title
+          = f.label :nickname
+          = f.text_field :name, class: "field", autofocus: true
+
+          = f.label :email
+          = f.email_field :email, class: "field"
+
+          = f.label :password
+          = f.password_field :password, class: "field", autocomplete: "off"
+
+          = f.label :password_confirmation
+          = f.password_field, :password_confirmation, class: "field", autocomplete: "off"  
+          
+          = f.submit "Sign up", class: "submit"
+          
