@@ -8,4 +8,12 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header__logo
+        Voting.me
+      .header__user
+        .header__user__login
+          ログイン
+        .header__user__signin
+          新規登録
     = yield
