@@ -1,2 +1,2 @@
-module ContentssHelper
+module ContentsHelper
 end
