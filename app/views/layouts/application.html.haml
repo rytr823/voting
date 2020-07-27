@@ -9,11 +9,13 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      .header__logo
-        Voting.me
-      .header__user
-        .header__user__login
-          ログイン
-        .header__user__signin
-          新規登録
+      = link_to "Voting.me", root_path, class: "header__logo"
+      - if user_signed_in? 
+        .header__user
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"
+          = link_to "投票してもらう", new_content_path, class: "post"
+      - else
+        .header__user
+          = link_to "ログイン", new_user_session_path, class: "post"
+          = link_to "新規登録", new_user_registration_path, class: "post"
     = yield

@@ -1,12 +1,12 @@
-.content
-  .content__new
+.input
+  .input__new
     = form_with model: @detail, url: '#', local: true do |f|
-      %h1
+      .title
         みんなに聞いてみよう！
-      .content__new__title
+      .input__new__title
         何について迷っているの？
         = f.text_field :title, class: 'form', placeholder: "迷っていることをかいてね！"
-      .content__new__choice
+      .input__new__choice
         みんなに投票してもらう2択を決めてね！
         = f.text_field :text, class: 'form', placeholder: "①"
         = f.text_field :text, class: 'form', placeholder: "②"

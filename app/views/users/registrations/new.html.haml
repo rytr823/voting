@@ -1,0 +1,23 @@
+.input
+  .input__new
+    = form_with model: @user, url: user_registration_path, local: true do |f|
+      .title
+        Sign up
+      .input__new__title
+        = devise_error_messages
+        = f.label :Nickname
+        = f.text_field :nickname, class: "field", autofocus: true
+
+        = f.label :Email
+        = f.email_field :email, class: "field"
+
+        = f.label :Password
+        = f.password_field :password, class: "field", autocomplete: "off"
+
+        = f.label :Password_confirmation
+        = f.password_field :password_confirmation, class: "field", autocomplete: "off"  
+        
+        = f.submit "Sign up", class: "submit"
+          
+
+
