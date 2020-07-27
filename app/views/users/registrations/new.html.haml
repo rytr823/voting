@@ -1,9 +1,9 @@
-.content
-  .content__new
+.input
+  .input__new
     = form_with model: @user, url: user_registration_path, local: true do |f|
       %h2
         Sign up
-      .content__new__title
+      .input__new__title
         = f.label :nickname
         = f.text_field :nickname, class: "field", autofocus: true
 
