@@ -1,0 +1,16 @@
+.input
+  .input__new
+    = form_with model: @user, url: user_session_path, local: true do |f|
+      %h2 
+        Log in
+      .input__new__title
+        = f.label :email
+        = f.email_field :email, class: "field"
+      
+        = f.label :password
+        = f.password_field :password, class: "field", autocomplete: "off"
+      
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: "field", autocomplete: "off"  
+      
+        = f.submit "Log in", class: "submit"

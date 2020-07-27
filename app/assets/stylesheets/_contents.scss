@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  a:visited { color:white; text-decoration:none }
 }
 
   .header {
@@ -12,6 +13,7 @@
     color: #fff;
     &__logo {
       font-size: 60px;
+      text-decoration: none;
     }
     &__user {
       display: flex;
@@ -54,7 +56,7 @@
   }
   
   // contents/new.html.erb
-  .content {
+  .input {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
