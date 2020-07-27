@@ -1,7 +1,7 @@
 .input
   .input__new
     = form_with model: @user, url: user_registration_path, local: true do |f|
-      %h2
+      .title
         Sign up
       .input__new__title
         = f.label :nickname
