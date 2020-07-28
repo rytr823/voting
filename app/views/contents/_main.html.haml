@@ -1,62 +1,21 @@
 .main  
   .main__contents
-    .main__contents__content
-      .main__contents__content__title
-        どっちの色がいい？
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ① 赤
-        .main__contents__content__choice__number
-          2票
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ② 青
-        .main__contents__content__choice__number
-          5票
-
-      .main__contents__content__info
-        .main__contents__content__info__name
-          taro
-        .main__contents__content__info__date
-          2020/7/26 13:17
-    
-    .main__contents__content
-      .main__contents__content__title
-        どっちの色がいい？
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ① 赤
-        .main__contents__content__choice__number
-          2票
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ② 青
-        .main__contents__content__choice__number
-          5票
-
-      .main__contents__content__info
-        .main__contents__content__info__name
-          taro
-        .main__contents__content__info__date
-          2020/7/26 13:17
-    
-    .main__contents__content
-      .main__contents__content__title
-        どっちの色がいい？
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ① 赤
-        .main__contents__content__choice__number
-          2票
-      .main__contents__content__choice
-        .main__contents__content__choice__text
-          ② 青
-        .main__contents__content__choice__number
-          5票
-
-      .main__contents__content__info
-        .main__contents__content__info__name
-          taro
-        .main__contents__content__info__date
-          2020/7/26 13:17
-    
+    - @contents.each do |content|
+      .main__contents__content
+        .main__contents__content__title
+          = content.title
+        .main__contents__content__choice
+          .main__contents__content__choice__text
+            ① 赤
+          .main__contents__content__choice__number
+            2票
+        .main__contents__content__choice
+          .main__contents__content__choice__text
+            ② 青
+          .main__contents__content__choice__number
+            5票
+        .main__contents__content__info
+          .main__contents__content__info__name
+            = content.user.nickname
+          .main__contents__content__info__date
+            = content.created_at
