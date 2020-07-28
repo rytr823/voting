@@ -4,16 +4,12 @@
       .main__contents__content
         .main__contents__content__title
           = content.title
-        .main__contents__content__choice
-          .main__contents__content__choice__text
-            ① 赤
-          .main__contents__content__choice__number
-            2票
-        .main__contents__content__choice
-          .main__contents__content__choice__text
-            ② 青
-          .main__contents__content__choice__number
-            5票
+        - content.choices.each do |choice|
+          .main__contents__content__choice
+            .main__contents__content__choice__text 
+              = choice.text
+            .main__contents__content__choice__number
+              2票
         .main__contents__content__info
           .main__contents__content__info__name
             = content.user.nickname
