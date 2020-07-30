@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+
+      content:
+        choices: Choices text
+        title: お題
+
+        

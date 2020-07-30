@@ -3,11 +3,14 @@
     = form_with model: @content, url: contents_path, local: true do |f|
       .title
         みんなに投票してもらおう！
+      = render "shared/error_messages", model: f.object
       .input__new__title
-        = f.label :何について投票してもらう？
+        = f.label :Title
         = f.text_field :title, class: 'title-form', placeholder: "例 : スマホ買い換えるなら、色は？"
-      .input__new__choice
-        みんなに選んでもらう項目をきめてね！(2つ以上入力)
+      .input__new__choices
+        .input__new__choices__choice
+          みんなに選んでもらう項目をきめてね！(2つ以上入力)
+        = f.label :'Choices text!'
         = f.fields_for :choices do |c|
           = render "choices_fields", f: c
         .links
