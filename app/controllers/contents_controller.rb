@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
-    @choices = @content.choices.build
+    2.times{@content.choices.build}
   end
 
   def create

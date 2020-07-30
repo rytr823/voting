@@ -7,8 +7,8 @@
         = f.label :何について投票してもらう？
         = f.text_field :title, class: 'title-form', placeholder: "例 : スマホ買い換えるなら、色は？"
       .input__new__choice
+        みんなに選んでもらう項目をきめてね！(2つ以上入力)
         = f.fields_for :choices do |c|
-          = f.label :みんなに選んでもらう項目をきめてね！
           = render "choices_fields", f: c
         .links
           = link_to_add_association "➕", f, :choices, class: 'add', partial: "choices_fields", data: {association_insertion_method: 'before'}
