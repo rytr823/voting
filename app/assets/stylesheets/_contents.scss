@@ -1,19 +1,19 @@
 * {
   box-sizing: border-box;
-  a:visited { color:white; text-decoration:none }
 }
 
-  .header {
-    background-color:#57C3E9;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 150px;
-    width: 100vw;
-    color: #fff;
-    &__logo {
-      font-size: 60px;
-      text-decoration: none;
+.header {
+  background-color:#57C3E9;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  width: 100vw;
+  color: #fff;
+  a:visited { color:#fff; text-decoration:none }
+  &__logo {
+    font-size: 60px;
+    text-decoration: none;
     }
     &__user {
       display: flex;
@@ -72,13 +72,34 @@
       box-sizing: border-box;
     }
   }
+  
+  .nested-fields {
+    &__form{
+      display: flex;
+      align-items: center;
+      .delete {
+        margin-left: 20px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
 
   .title {
     font-size: 25px;
     margin-bottom: 15px;
+    width: 100%;
+  }
+  .title-form {
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    border: 1px solid #D8D8D8;
+    border-radius: 20px;
+    font-family: "游ゴシック", "YuGothic";
   }
   .form {
-    width: 100%;
+    width: 85%;
     margin: 5px 0 15px;
     padding: 10px;
     border: 1px solid #D8D8D8;
@@ -103,6 +124,7 @@
     font-size: 18px;
     padding: 5px;
     width: 100%;
+    margin-top: 10px;
   }
 
   .post {
@@ -116,4 +138,10 @@
     border-radius: 3px;
     display: inline-block;
     text-decoration: none;
+  }
+
+  .error-alert {
+    font-size: 15px;
+    color: red;
+    margin-bottom: 15px;
   }

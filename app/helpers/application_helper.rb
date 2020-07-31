@@ -1,7 +1,8 @@
 module ApplicationHelper
   def devise_error_messages
-    return "" if resource.errors.empty?
-    html = ""
+    return '' if resource.errors.empty?
+
+    html = ''
     messages = resource.errors.full_messages.each do |msg|
       html += <<-EOF
         <div class="error_field alert alert-danger" role="alert">

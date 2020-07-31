@@ -1,0 +1,4 @@
+.nested-fields
+  .nested-fields__form
+    = f.text_field :text, class: 'choice-form form', placeholder: '例 : ホワイト or ブラック'
+    = link_to_remove_association "✖️", f, class: 'delete', id: 'remove-btn'

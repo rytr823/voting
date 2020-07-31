@@ -10,33 +10,33 @@ describe User do
     it 'is valid with all column' do
       expect(@user).to be_valid
     end
-    
+
     # nicknameが空であれば登録できないこと
     it 'is invalid without a nickname' do
       @user.nickname = nil
       @user.valid?
-      expect(@user.errors[:nickname]).to include("を入力してください")
+      expect(@user.errors[:nickname]).to include('を入力してください')
     end
 
     # emailが空であれば登録できないこと
     it 'is invalid without a email' do
       @user.email = nil
       @user.valid?
-      expect(@user.errors[:email]).to include("を入力してください")
+      expect(@user.errors[:email]).to include('を入力してください')
     end
 
     # passwordが空であれば登録できないこと
     it 'is invalid without a password' do
       @user.password = nil
       @user.valid?
-      expect(@user.errors[:password]).to include("を入力してください", "は半角英数字混合で入力してください")
+      expect(@user.errors[:password]).to include('を入力してください', 'は半角英数字混合で入力してください')
     end
 
     # passwordが存在してもpassword_confirmationが空では登録できないこと
     it 'is invalid without a password_confirmation although with a password' do
       @user.password_confirmation = nil
       @user.valid?
-      expect(@user.errors[:password_confirmation]).to include("は半角英数字混合で入力してください")
+      expect(@user.errors[:password_confirmation]).to include('は半角英数字混合で入力してください')
     end
 
     # 重複したemailが存在する場合は登録できないこと
@@ -67,16 +67,15 @@ describe User do
       @user.password = 'ab000'
       @user.password_confirmation = 'ab000'
       @user.valid?
-      expect(@user.errors[:password]).to include("は6文字以上で入力してください", "は半角英数字混合で入力してください")
+      expect(@user.errors[:password]).to include('は6文字以上で入力してください', 'は半角英数字混合で入力してください')
     end
 
     # passwordが半角英数時混合以外であれば登録できないこと
     it 'is invalid without a password except mixed with half-width alphanumeric characters' do
-      @user.password = 000000
-      @user.password_confirmation = 000000
+      @user.password = 0o00000
+      @user.password_confirmation = 0o00000
       @user.valid?
       expect(@user.errors[:password]).to include('は半角英数字混合で入力してください')
     end
-
-  end 
+  end
 end
