@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :choice do
-    text { 'ホワイト'}
+    text { 'ホワイト' }
     association :content
   end
 end

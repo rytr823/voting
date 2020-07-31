@@ -11,19 +11,19 @@ RSpec.describe Choice, type: :model do
     it 'is valid all column' do
       expect(@choice).to be_valid
     end
-    
+
     # textが空であれば登録できないこと
     it 'is invalid without a text column' do
       @choice.text = nil
       @choice.valid?
-      expect(@choice.errors[:text]).to include("を入力してください")
+      expect(@choice.errors[:text]).to include('を入力してください')
     end
 
     # contentが空であれば登録できないこと
     it 'is invalid without a content' do
       @choice.content = nil
       @choice.invalid?
-      expect(@choice.errors[:content]).to include("を入力してください")
+      expect(@choice.errors[:content]).to include('を入力してください')
     end
   end
 end

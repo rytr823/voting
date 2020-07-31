@@ -1,11 +1,11 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.includes(:user, :choices).order("created_at DESC")
-  end  
+    @contents = Content.includes(:user, :choices).order('created_at DESC')
+  end
 
   def new
     @content = Content.new
-    2.times{@content.choices.build}
+    2.times { @content.choices.build }
   end
 
   def create
@@ -18,9 +18,10 @@ class ContentsController < ApplicationController
   end
 
   private
+
   def content_params
     params.require(:content)
-    .permit(:title, choices_attributes: [:id, :text, :content_id, :_destroy])
-    .merge(user_id: current_user.id)
+          .permit(:title, choices_attributes: [:id, :text, :content_id, :_destroy])
+          .merge(user_id: current_user.id)
   end
 end
