@@ -1,0 +1,15 @@
+- if user_signed_in?
+  - if choice.vote_user(current_user.id)
+    = button_to choice_vote_path(id: choice.id, content_id: content.id, choice_id: choice.id), method: :delete, id: "vote-btn", remote: true do
+      ⭐️ delete
+      %span
+        = choice.votes_count
+  - else
+    = button_to choice_votes_path(id: choice.id, content_id: content.id, choice_id: choice.id), id: "vote-btn", remote: true do
+      ⭐️ create
+      %span
+        = choice.votes_count
+- else
+  ⭐️ not signin
+  %span
+    = choice.votes_count
