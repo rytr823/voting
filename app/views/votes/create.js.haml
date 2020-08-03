@@ -1,2 +1,3 @@
 console.log('create')
-$("#vote_#{@choice.id}").html("#{j(render partial: 'contents/vote', locals: {id: @choice.id, choice: @choice, votes: @votes, vote: @vote, votes_count: @choice.votes_count })}");
+$("#vote_#{@choice.id}").html("#{j(render partial: 'contents/vote', locals: {id: @choice.id, choice: @choice, votes: @votes, vote: @vote })}");
+$("#vote_#{")
