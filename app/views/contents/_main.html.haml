@@ -9,7 +9,7 @@
             .main__contents__content__choice__text 
               = choice.text
             .main__contents__content__choice__number
-              #vote-choice.id
+              #vote{id: choice.id}
                 = render partial: "vote", locals: { content: content, choice: choice }
         .main__contents__content__info
           .main__contents__content__info__name

@@ -3,7 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.create(vote_params)
-    @votes = where(choice_id: @choice.id)
+    @votes = Vote.where(choice_id: @choice.id)
     @choices = Choice.all
   end
 
