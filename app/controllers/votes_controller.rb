@@ -2,7 +2,9 @@ class VotesController < ApplicationController
   before_action :set_choice
 
   def create
-    @vote = Vote.create(vote_params)
+    @vote = Vote.new(vote_params)
+    @already_vote = Vote.find_by(content_id: @vote.content_id)
+    overlap_adjustment
     @votes = Vote.where(choice_id: @choice.id)
     @choices = Choice.all
   end
@@ -21,5 +23,16 @@ class VotesController < ApplicationController
 
   def set_choice
     @choice = Choice.find(params[:id])
+  end
+
+  def overlap_adjustment
+    if @already_vote == nil
+      @vote.save
+    elsif @vote.user_id == current_user.id && @vote.content_id == @already_vote.content_id
+      @already_vote.destroy
+      @vote.save
+    else
+      @vote.save
+    end
   end
 end
