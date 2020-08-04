@@ -17,6 +17,7 @@ class VotesController < ApplicationController
   end
 
   private
+
   def vote_params
     params.permit(id: @choice.id).merge(user_id: current_user.id, content_id: @choice.content_id, choice_id: @choice.id)
   end
@@ -26,7 +27,7 @@ class VotesController < ApplicationController
   end
 
   def overlap_adjustment
-    if @already_vote == nil
+    if @already_vote.nil?
       @vote.save
     elsif @vote.user_id == current_user.id && @vote.content_id == @already_vote.content_id
       @already_vote.destroy
