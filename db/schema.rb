@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_081644) do
 
   create_table "choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
+    t.integer "votes_count"
     t.bigint "content_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,11 +43,19 @@ ActiveRecord::Schema.define(version: 2020_07_28_081644) do
   end
 
   create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "content_id", null: false
     t.bigint "choice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["choice_id"], name: "index_votes_on_choice_id"
+    t.index ["content_id"], name: "index_votes_on_content_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "choices", "contents"
+  add_foreign_key "contents", "users"
   add_foreign_key "votes", "choices"
+  add_foreign_key "votes", "contents"
+  add_foreign_key "votes", "users"
 end
