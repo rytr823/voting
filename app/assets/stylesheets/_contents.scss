@@ -25,13 +25,7 @@
     padding: 50px;
     width: 100vw;;
     &__contents {
-      padding: 10px;
       &__content {
-        margin: 20px 0;
-        padding: 30px;
-        box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-        background-color: white;
-        box-sizing: border-box;
         &__choice {
           display: flex;
           justify-content: space-between;
@@ -55,7 +49,6 @@
     }
   }
   
-  // contents/new.html.erb
   .input {
     width: 100%;
     margin-left: auto;

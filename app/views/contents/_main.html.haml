@@ -1,7 +1,7 @@
 .main  
-  .main__contents
+  .main__contents.input
     - @contents.each do |content|
-      .main__contents__content
+      .main__contents__content.input__new
         .main__contents__content__title
           = content.title
         - content.choices.each do |choice|
