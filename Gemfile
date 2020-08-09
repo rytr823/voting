@@ -58,6 +58,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
