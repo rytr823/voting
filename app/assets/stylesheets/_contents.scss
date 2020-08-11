@@ -21,7 +21,7 @@
   }
   
   .main {
-    background-color: snow;
+    background-color: #fff;
     padding: 50px;
     width: 100vw;;
     &__contents {
@@ -137,4 +137,13 @@
     font-size: 15px;
     color: red;
     margin-bottom: 15px;
+  }
+
+  #vote-btn {
+    width: 50px;
+    margin-bottom: 17px;
+    border: 1px solid #D8D8D8;
+    border-radius: 20px;
+    color: orange;
+    background-color: #fff;
   }

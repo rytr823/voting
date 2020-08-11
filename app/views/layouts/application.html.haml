@@ -9,7 +9,9 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      = link_to "Voting.me", root_path, class: "header__logo"
+      .header__logo
+        = icon("fas", "vote-yea") 
+        = link_to "Voting.me", root_path, class: "header__logo"
       - if user_signed_in? 
         .header__user
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"
