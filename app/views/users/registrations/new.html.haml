@@ -4,7 +4,8 @@
       .title
         Sign up
       .input__new__title
-        = devise_error_messages
+        .error_message
+          = devise_error_messages
         = f.label :nickname
         = f.text_field :nickname, class: "field", autofocus: true
 
