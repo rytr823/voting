@@ -2,9 +2,11 @@ ja:
   activerecord:
     attributes:
       user:
-
+        nickname: ニックネーム
       content:
-        choices: Choices text
         title: お題
+        choices: 項目
+      content/choices:
+        text: お題の項目
 
         

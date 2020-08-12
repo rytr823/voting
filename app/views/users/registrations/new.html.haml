@@ -5,16 +5,16 @@
         Sign up
       .input__new__title
         = devise_error_messages
-        = f.label :Nickname
+        = f.label :nickname
         = f.text_field :nickname, class: "field", autofocus: true
 
-        = f.label :Email
+        = f.label :email
         = f.email_field :email, class: "field"
 
-        = f.label :Password
+        = f.label :password
         = f.password_field :password, class: "field", autocomplete: "off"
 
-        = f.label :Password_confirmation
+        = f.label :password_confirmation
         = f.password_field :password_confirmation, class: "field", autocomplete: "off"  
         
         = f.submit "Sign up", class: "submit"
