@@ -9,6 +9,7 @@
               %ul.more_list
                 %li
                   = link_to '編集', edit_content_path(content.id), method: :get
+                  = link_to '削除', content_path(content.id), method: :delete
           - else
         -else
         .main__contents__content__title
