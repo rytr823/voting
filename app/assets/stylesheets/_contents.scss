@@ -1,6 +1,13 @@
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
+h3 {
+  text-align: center;
+  border-bottom: double 5px grey;
+}
 
 .header {
   background-color:#57C3E9;
@@ -13,7 +20,7 @@
   a:visited { color:#fff; text-decoration:none }
   &__logo {
     font-size: 60px;
-    text-decoration: none;
+    
     }
     &__user {
       display: flex;
@@ -58,6 +65,7 @@
     max-width: 660px;
     *zoom: 1;
     &__new {
+      width: 100%;
       margin: 20px 0;
       padding: 30px;
       box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
@@ -65,7 +73,49 @@
       box-sizing: border-box;
     }
   }
+
+  .more {
+    z-index: 2;
+    height: 50px;
+    text-align: right;
+    color:  grey;
+    cursor: pointer;
+    position: relative;
+  }
+  .more:hover ul.more_list {
+    display: block;
+  }
+  .more ul.more_list {
+    position: absolute;
+    text-align: left;
+    width: 80px;
+    right: 0;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  .more:hover ul.more_list li{
+    border-bottom: 1px solid #ddd;
+  }
+  .more ul.more_list li:last-child {
+    border-bottom: 0;
+  }
+  .more ul.more_list li a {
+    display: block;
+    padding: 5px;
+    color: grey;
+  }
+  .more ul.more_list li a:hover {
+    background-color: #57C3E9;
+    color: #fff;
+    transition: background-color 0.5s;
+  }
   
+
   .nested-fields {
     &__form{
       display: flex;
@@ -120,6 +170,11 @@
     margin-top: 10px;
   }
 
+  .to-toppage {
+    margin-top: 25px;
+    text-align: center;
+  }
+
   .post {
     margin-right: 20px;
     padding: 8px 20px;
@@ -130,7 +185,6 @@
     text-align: center;
     border-radius: 3px;
     display: inline-block;
-    text-decoration: none;
   }
 
   .error-alert {

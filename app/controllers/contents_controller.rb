@@ -17,6 +17,18 @@ class ContentsController < ApplicationController
     end
   end
 
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update 
+    content = Content.find(params[:id])
+    if content.update(content_params)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def content_params
