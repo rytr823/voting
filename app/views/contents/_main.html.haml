@@ -2,11 +2,15 @@
   .main__contents.input
     - @contents.each do |content|
       .main__contents__content.input__new
-        .more
-          = icon("fas", "angle-down")
-          %ul.more_list
-            %li
-              = link_to '編集', edit_content_path(content.id), method: :get
+        - if user_signed_in?
+          - if current_user.id == content.user_id
+            .more
+              = icon("fas", "angle-down")
+              %ul.more_list
+                %li
+                  = link_to '編集', edit_content_path(content.id), method: :get
+          - else
+        -else
         .main__contents__content__title
           = content.title
         - content.choices.each do |choice|
