@@ -1,0 +1,18 @@
+.input
+  .input__new
+    = form_with model: @content, url: content_path(@content.id), local: true do |f|
+      .title
+        お題を編集する
+      = render "shared/error_messages", model: f.object
+      .input__new__title
+        = f.label :title
+        = f.text_field :title, class: 'title-form', placeholder: "例 : スマホ買い換えるなら、色は？"
+      .input__new__choices
+        .input__new__choices__choice
+          みんなに選んでもらう項目をきめてね！(2つ以上入力)
+        = f.label :text
+        = f.fields_for :choices do |c|
+          = render "choices_fields", f: c
+        .links
+          = link_to_add_association "➕", f, :choices, class: 'add', partial: "choices_fields", data: {association_insertion_method: 'before'}
+      = f.submit "編集完了！", class: 'submit'
