@@ -4,6 +4,10 @@
 a {
   text-decoration: none;
 }
+h3 {
+  text-align: center;
+  border-bottom: double 5px grey;
+}
 
 .header {
   background-color:#57C3E9;
@@ -164,6 +168,11 @@ a {
     padding: 5px;
     width: 100%;
     margin-top: 10px;
+  }
+
+  .to-toppage {
+    margin-top: 25px;
+    text-align: center;
   }
 
   .post {
