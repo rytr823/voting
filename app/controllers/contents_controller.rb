@@ -29,6 +29,14 @@ class ContentsController < ApplicationController
     end
   end
 
+  def destroy
+    content = Content.find(params[:id])
+    if content.destroy
+    else
+      render :index
+    end
+  end
+
   private
 
   def content_params

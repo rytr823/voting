@@ -1,6 +1,6 @@
 class Choice < ApplicationRecord
   belongs_to :content
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   validates :text, presence: true
 
