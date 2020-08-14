@@ -13,8 +13,7 @@
 
 ## URL
 - http://3.114.239.117
-  - basic認証
-    - (username: ryutaro, password: 0823)
+  - basic認証 (username: ryutaro, password: 0823)
 
 ## 利用方法
 - ユーザー登録をお願いします。
@@ -56,6 +55,8 @@
 - AWSでのデプロイ
   - 利用者が増加した場合を想定し、学習も兼ねて簡易的なデプロイ方法ではなく大規模サービスで多く使用されているデプロイ方法を採用しました。
 
+
+## DB設計
 ##usersテーブル
 |Colum|Type|Options|
 |-----|----|-------|
