@@ -33,6 +33,10 @@ h3 {
     width: 100vw;;
     &__contents {
       &__content {
+        &__title {
+          font-size: 18px;
+          
+        }
         &__choice {
           display: flex;
           justify-content: space-between;
@@ -50,6 +54,7 @@ h3 {
         &__info {
           text-align: right;
           font-size: 15px;
+          color: #708090;
         }
       }
       
