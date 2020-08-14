@@ -6,6 +6,7 @@ ja:
       content:
         title: お題
         choices: 項目
+        text: 項目
       content/choices:
         text: お題の項目
 
