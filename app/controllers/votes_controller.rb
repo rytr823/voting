@@ -7,6 +7,10 @@ class VotesController < ApplicationController
     overlap_adjustment
     @choice.reload
     @votes = Vote.where(choice_id: @choice.id)
+
+    @choices = @choice.content.choices
+    
+    
   end
 
   def destroy
