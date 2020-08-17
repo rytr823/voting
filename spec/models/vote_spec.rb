@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
   describe '#create' do
-    let(:user) {FactoryBot.create(:user)}
+    let(:user) { FactoryBot.create(:user) }
     before do
       @vote = build(:vote)
     end
@@ -10,7 +10,7 @@ RSpec.describe Vote, type: :model do
     # 全てのカラムが存在すれば登録可能
     it 'is valid all column' do
       expect(@vote).to be_valid
-    end  
+    end
 
     # userが空であれば登録できない
     it 'is invalid without a user' do
