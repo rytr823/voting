@@ -7,14 +7,12 @@ class VotesController < ApplicationController
     @already_vote = @already_votes.find_by(user_id: @vote.user_id)
     overlap_adjustment
     @choice.reload
-    @votes = Vote.where(choice_id: @choice.id)
     @choices = @choice.content.choices
   end
 
   def destroy
     vote = Vote.find_by(vote_params)
     vote.destroy
-    @votes = Vote.where(choice_id: @choice.id)
     @choice.reload
   end
 
