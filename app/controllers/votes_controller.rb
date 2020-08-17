@@ -3,14 +3,12 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(vote_params)
-    @already_vote = Vote.find_by(content_id: @vote.content_id)
+    @already_votes = @choice.content.votes
+    @already_vote = @already_votes.find_by(user_id: @vote.user_id)
     overlap_adjustment
     @choice.reload
     @votes = Vote.where(choice_id: @choice.id)
-
     @choices = @choice.content.choices
-    
-    
   end
 
   def destroy
@@ -31,9 +29,11 @@ class VotesController < ApplicationController
   end
 
   def overlap_adjustment
-    if @already_vote.nil?
+    if @already_votes.nil?
       @vote.save
-    elsif @vote.user_id == current_user.id && @vote.content_id == @already_vote.content_id
+    elsif @already_vote.nil?
+      @vote.save
+    elsif @already_vote.user_id == current_user.id && @vote.content_id == @already_vote.content_id
       @already_vote.destroy
       @vote.save
     else

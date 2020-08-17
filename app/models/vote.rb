@@ -4,5 +4,5 @@ class Vote < ApplicationRecord
   belongs_to :choice, counter_cache: :votes_count
 
   validates :choice, presence: true
-  validates :content, uniqueness: true
+  validates :content, presence: true
 end

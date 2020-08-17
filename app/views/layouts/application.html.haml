@@ -14,6 +14,8 @@
         = link_to "Voting.me", root_path, class: "header__logo"
       - if user_signed_in? 
         .header__user
+          .post
+            = current_user.nickname
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"
           = link_to "投票を決める", new_content_path, class: "post"
       - else
