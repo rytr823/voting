@@ -32,16 +32,5 @@ RSpec.describe Vote, type: :model do
       @vote.valid?
       expect(@vote.errors[:choice]).to include('を入力してください')
     end
-
-    # contentが重複してはならない
-    it 'is invalid with a duplicate content' do
-      
-      vote = create(:vote)
-      
-      
-      another_vote = build(:vote, content: vote.content)
-      another_vote.valid?
-      expect(another_vote.errors[:content]).to include('はすでに存在します')
-    end
   end
 end
