@@ -48,20 +48,25 @@ h3 {
       &__content {
         &__title {
           font-size: 18px;
-          
         }
-        &__choice {
+        &__choices {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 10px 0;
-          &__text {
-            width: 80%;
-            margin: 5px 0 15px;
-            padding: 10px;
-            border: 1px solid #D8D8D8;
-            border-radius: 20px;
-            font-family: "游ゴシック", "YuGothic";
+          &__choice {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            margin: 10px 0;
+            &__text {
+              text-align: center;
+              width: 80%;
+              margin: 5px 0 15px;
+              padding: 10px;
+              border: 1px solid #D8D8D8;
+              border-radius: 20px;
+              font-family: "游ゴシック", "YuGothic";
+            }
           }
         }
         &__info {
@@ -214,10 +219,10 @@ h3 {
   #vote-btn {
     width: 50px;
     margin-bottom: 17px;
-    border: 1px solid #D8D8D8;
+    border: none;
     border-radius: 20px;
     color: orange;
     background-color: #fff;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 20px;
   }
