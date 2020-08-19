@@ -1,5 +1,9 @@
 .nested-fields
   .nested-fields__form
-    = f.text_field :text, class: 'choice-form form', placeholder: '例 : ホワイト or ブラック'
-    = f.file_field :image, placeholder: "画像"
-    = link_to_remove_association "✖️", f, class: 'delete', id: 'remove-btn'
+    .nested-fields__form__text
+      = f.text_field :text, class: 'choice-form', placeholder: '例 : ホワイト or ブラック'
+    .nested-fields__form__image
+      = f.label :image, class: "input-box__image" do
+        = icon('far', 'image', class: 'form-icon')
+        = f.file_field :image, class: "hidden"
+  = link_to_remove_association "✖️", f, class: 'delete', id: 'remove-btn'

@@ -140,17 +140,42 @@ h3 {
   
 
   .nested-fields {
+    display: flex;;
     &__form{
       display: flex;
       align-items: center;
-      .delete {
-        margin-left: 20px;
+      position: relative;
+      width: 90%;
+      &__text {
+        width: 100%;
+        margin: 5px 0 15px;
+        padding: 10px;
+        border: 1px solid #D8D8D8;
+        border-radius: 20px;
+        font-family: "游ゴシック", "YuGothic";
+      }
+      &__image {
+        position: absolute;
+        right: 30px;
+        font-size: 25px;
         padding-bottom: 10px;
       }
     }
   }
-
-
+  .choice-form {
+    border: none;
+  }
+  .delete {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+  .form-icon {
+    cursor: pointer;
+    color: grey;
+  }
   .title {
     font-size: 25px;
     margin-bottom: 15px;
