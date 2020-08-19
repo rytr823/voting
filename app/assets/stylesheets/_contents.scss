@@ -58,7 +58,7 @@ h3 {
             align-items: center;
             flex-direction: column;
             margin: 10px 0;
-            &__box {
+            &__text {
               text-align: center;
               width: 80%;
               margin: 5px 0 15px;
@@ -67,6 +67,9 @@ h3 {
               border-radius: 20px;
               font-family: "游ゴシック", "YuGothic";
             }
+          &__image {
+            margin: 5px;
+          }
           }
         }
         &__info {
