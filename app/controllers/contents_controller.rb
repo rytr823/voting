@@ -41,7 +41,7 @@ class ContentsController < ApplicationController
 
   def content_params
     params.require(:content)
-          .permit(:title, choices_attributes: [:id, :text, :content_id, :_destroy])
+          .permit(:title, choices_attributes: [:id, :text, :image, :content_id, :_destroy])
           .merge(user_id: current_user.id)
   end
 end
