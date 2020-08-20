@@ -51,6 +51,9 @@ h3 {
         }
         &__choices {
           display: flex;
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
           &__choice {
             width: 100%;
             display: flex;
@@ -68,7 +71,7 @@ h3 {
               font-family: "游ゴシック", "YuGothic";
             }
           &__image {
-            margin: 5px;
+            margin: 10px;
           }
           }
         }
@@ -167,6 +170,7 @@ h3 {
   }
   .choice-form {
     border: none;
+    width: 85%;
   }
   .delete {
     margin-top: 15px;
