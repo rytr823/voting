@@ -6,17 +6,31 @@ RSpec.describe Choice, type: :model do
     before do
       @choice = build(:choice)
     end
-
-    # 全てのカラムが存在すれば登録できること
-    it 'is valid all column' do
+    
+    # textがあれば保存できること
+    it 'is valid with a text' do
+      @choice.image = nil
       expect(@choice).to be_valid
     end
 
-    # textが空であれば登録できないこと
-    it 'is invalid without a text column' do
+    # imageがあれば保存できること
+    it 'is valid with a image' do
       @choice.text = nil
+      expect(@choice).to be_valid
+    end
+
+    # textとimageがあれば保存できること
+    it 'is valid with text and image' do
+      expect(@choice).to be_valid
+    end
+
+
+    # textとimage両方が空であれば登録できないこと
+    it 'is invalid without text and image column' do
+      @choice.text = nil
+      @choice.image = nil
       @choice.valid?
-      expect(@choice.errors[:text]).to include('を入力してください')
+      expect(@choice.errors[:text_or_image]).to include("を入力してください")
     end
 
     # contentが空であれば登録できないこと
@@ -25,5 +39,6 @@ RSpec.describe Choice, type: :model do
       @choice.invalid?
       expect(@choice.errors[:content]).to include('を入力してください')
     end
+
   end
 end
