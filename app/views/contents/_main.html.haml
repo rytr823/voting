@@ -17,8 +17,9 @@
         .main__contents__content__choices
           - content.choices.each do |choice|
             .main__contents__content__choices__choice
-              .main__contents__content__choices__choice__text
-                = choice.text
+              - if choice.text.present?
+                .main__contents__content__choices__choice__text
+                  = choice.text 
               .main__contents__content__choices__choice__image
                 = image_tag choice.image.variant(resize: '200x200') if choice.image.present?
               .main__contents__content__choices__choice__number
