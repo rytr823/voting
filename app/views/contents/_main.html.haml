@@ -14,13 +14,17 @@
         -else
         .main__contents__content__title
           = content.title
-        - content.choices.each do |choice|
-          .main__contents__content__choice
-            .main__contents__content__choice__text 
-              = choice.text
-            .main__contents__content__choice__number
-              .main__contents__content__choice__number__vote#vote{id: choice.id}
-                = render partial: "vote", locals: { choice: choice }
+        .main__contents__content__choices
+          - content.choices.each do |choice|
+            .main__contents__content__choices__choice
+              - if choice.text.present?
+                .main__contents__content__choices__choice__text
+                  = choice.text 
+              .main__contents__content__choices__choice__image
+                = image_tag choice.image.variant(resize: '200x200') if choice.image.present?
+              .main__contents__content__choices__choice__number
+                .main__contents__content__choices__choice__number__vote#vote{id: choice.id}
+                  = render partial: "vote", locals: { choice: choice }
         .main__contents__content__info
           .main__contents__content__info__name
             = content.user.nickname

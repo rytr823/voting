@@ -72,3 +72,5 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'cocoon'
 gem 'font-awesome-sass'
+gem 'mini_magick'
+gem 'aws-sdk-s3', require: false
