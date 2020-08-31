@@ -8,7 +8,7 @@ class ContentsController < ApplicationController
 
     # あらかじめ2つの項目入力欄を表示しておく為。
     2.times { @content.choices.build }
-    
+
   end
 
   def create
@@ -21,11 +21,13 @@ class ContentsController < ApplicationController
   end
 
   def edit
-    @content = Content.find(params[:id])
+    # @content = Content.find(params[:id])
+    @content = current_user.contents.find(params[:id])
   end
 
   def update
-    content = Content.find(params[:id])
+    # content = Content.find(params[:id])
+    content = current_user.contents.find(params[:id])
     if content.update(content_params)
     else
       render :edit
@@ -33,7 +35,8 @@ class ContentsController < ApplicationController
   end
 
   def destroy
-    content = Content.find(params[:id])
+    # content = Content.find(params[:id])
+    content = current_user.contents.find(params[:id])
     if content.destroy
     else
       render :index
