@@ -5,7 +5,10 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
+
+    # あらかじめ2つの項目入力欄を表示しておく為。
     2.times { @content.choices.build }
+    
   end
 
   def create
