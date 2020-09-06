@@ -52,6 +52,6 @@ test:
 production:
   <<: *default
   database: voting_production
-  username: voting
-  password: <%= ENV['VOTING_DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  # username: voting
+  # password: <%= ENV['VOTING_DATABASE_PASSWORD'] %>
+  # socket: /var/lib/mysql/mysql.sock
