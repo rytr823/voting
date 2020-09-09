@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      content:
+        title: お題
+        choices: 項目
+        text: 項目
+      content/choices:
+        text: お題の項目
+        text_or_image: 項目または画像
+
+        

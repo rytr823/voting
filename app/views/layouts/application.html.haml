@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Voting
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header__logo
+        = icon("fas", "vote-yea") 
+        = link_to "Voting.me", root_path, class: "header__logo"
+      - if user_signed_in? 
+        .header__user
+          .name
+            = icon("fas", "user")
+            = current_user.nickname
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"
+          = link_to "投票を決める", new_content_path, class: "post"
+      - else
+        .header__user
+          = link_to "ログイン", new_user_session_path, class: "post"
+          = link_to "新規登録", new_user_registration_path, class: "post"
+    = yield
+    .footer
+      Voting.me 2020

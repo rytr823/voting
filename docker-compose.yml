@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -e production
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment: 
+      BASIC_AUTH_USER: ${BASIC_AUTH_USER:-default}
+      BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-default}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-default}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-default}
+  nginx:
+    build: containers/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./public:/app/public
+      - ./tmp:/app/tmp
+    depends_on:
+      - web
