@@ -7,6 +7,7 @@ WORKDIR /voting
 COPY Gemfile /voting/Gemfile
 COPY Gemfile.lock /voting/Gemfile.lock
 RUN gem install bundler
+RUN apk add --update nodejs nodejs-npm
 RUN apk add --no-cache gmp-dev
 RUN bundle install
 COPY . /voting
