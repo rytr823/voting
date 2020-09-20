@@ -23,6 +23,8 @@ services:
     environment:
       BASIC_AUTH_USER: ${BASIC_AUTH_USER:-default}
       BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-default}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-default}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-default}
 volumes:
   mysql-data:
     driver: local
