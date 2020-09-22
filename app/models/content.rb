@@ -10,4 +10,13 @@ class Content < ApplicationRecord
     validates :title
     validates :user
   end
+
+  def self.search(search)
+    if search != ""
+      Content.where('title LIKE(?)', "%#{search}%")
+    else
+      Content.all
+    end
+  end
 end
+  
