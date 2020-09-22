@@ -1,0 +1,3 @@
+= render "shared/search_form"
+= @contents.each do |content|
+  = render partial: "content", locals: { content: content }
