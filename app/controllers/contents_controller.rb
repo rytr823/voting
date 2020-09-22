@@ -40,6 +40,10 @@ class ContentsController < ApplicationController
     end
   end
 
+  def search
+    @contents = Content.search(params[:keyword])
+  end
+
   private
 
   def content_params
